@@ -30,7 +30,7 @@ useEffect(()=>{
   } 
   data();
 
-  }) 
+  },[1]) 
 
   if(!TotalQuestions.length){
     return(
