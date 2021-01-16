@@ -22,21 +22,28 @@ useEffect(()=>{
   // console.log(data); // beacuse yah bhi promise so
 
 
-  if(condition){
+ 
     const data=async()=>{
-      const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
+      if(condition){
+        const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
         
         setQuestions(setdata);
     
+      }
+      
+
         // console.log(setdata)
        
-      } 
-      data();
-     setcondition(false)  
+      }
 
-  }
+      
+      data();
+       setcondition(false) 
+
+  
   
   }) 
+ 
 
   if(!TotalQuestions.length){
     return(
