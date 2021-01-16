@@ -5,6 +5,12 @@ import Displayquestion from '../component/Displayquestion';
 import Loader from "../component/loader"
 import Result from "../component/result"
 
+
+
+
+
+
+
 var Quiz:React.FC<questionpattren>=({ques,cata,level})=>{
 
   // console.log(ques,cata,level)
@@ -14,7 +20,7 @@ var Quiz:React.FC<questionpattren>=({ques,cata,level})=>{
   var [count,setcount] =useState<number>(0);
 
   var [score,setscore]=useState<number>(0);
-  var [condition,setcondition]=useState<boolean>(true);
+  
 
 useEffect(()=>{
 
@@ -22,28 +28,21 @@ useEffect(()=>{
   // console.log(data); // beacuse yah bhi promise so
 
 
- 
+  
     const data=async()=>{
-      if(condition){
-        const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
+      const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
         
         setQuestions(setdata);
     
-      }
-      
-
         // console.log(setdata)
        
-      }
-
-      
+      } 
       data();
-       setcondition(false) 
+    
 
   
   
-  }) 
- 
+  },[]) 
 
   if(!TotalQuestions.length){
     return(
@@ -85,7 +84,7 @@ useEffect(()=>{
 
   return (
     <div>
-     
+   
     <Displayquestion 
     
 
