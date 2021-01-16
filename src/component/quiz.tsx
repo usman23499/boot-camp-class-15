@@ -14,23 +14,29 @@ var Quiz:React.FC<questionpattren>=({ques,cata,level})=>{
   var [count,setcount] =useState<number>(0);
 
   var [score,setscore]=useState<number>(0);
+  var [condition,setcondition]=useState<boolean>(true);
 
 useEffect(()=>{
 
   // var data=Calldata(5,"easy");
   // console.log(data); // beacuse yah bhi promise so
 
-  const data=async()=>{
-  const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
+
+  if(condition){
+    const data=async()=>{
+      const setdata: QuestionDataset[] =await Calldata(ques,level,cata);
+        
+        setQuestions(setdata);
     
-    setQuestions(setdata);
+        // console.log(setdata)
+       
+      } 
+      data();
+     setcondition(false)  
 
-    // console.log(setdata)
-   
-  } 
-  data();
-
-  },[1]) 
+  }
+  
+  }) 
 
   if(!TotalQuestions.length){
     return(
