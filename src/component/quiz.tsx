@@ -33,12 +33,12 @@ useEffect(()=>{
 
   },[]) 
 
-  if(!TotalQuestions.length){
-    return(
+  // if(!TotalQuestions.length){
+  //   return(
 
-     <Loader/>
-    )
-  } 
+  //    <Loader/>
+  //   )
+  // } 
  
 
   const handlechale=(e: React.FormEvent<EventTarget>,selection: string)=> {
