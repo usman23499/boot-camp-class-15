@@ -7,7 +7,7 @@ import Result from "../component/result"
 
 var Quiz:React.FC<questionpattren>=({ques,cata,level})=>{
 
-  console.log(ques,cata,level)
+  // console.log(ques,cata,level)
   
   const [TotalQuestions,setQuestions] =useState<QuestionDataset[]>([]);
   
