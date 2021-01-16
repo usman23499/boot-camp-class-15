@@ -20,8 +20,8 @@ useEffect(()=>{
   // var data=Calldata(5,"easy");
   // console.log(data); // beacuse yah bhi promise so
 
-  var data=async()=>{
-    var setdata: QuestionDataset[] =await Calldata(ques,level,cata);
+  const data=async()=>{
+  const setdata=await Calldata(ques,level,cata);
     
     setQuestions(setdata);
 
